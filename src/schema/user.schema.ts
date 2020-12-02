@@ -11,7 +11,7 @@ export class User {
   })
   user_id: string;
 
-  @Prop()
+  @Prop({ required: true })
   display_name: string;
 
   @Prop({

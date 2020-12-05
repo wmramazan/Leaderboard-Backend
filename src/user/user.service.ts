@@ -5,7 +5,6 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { User, UserDocument } from '../user/user.schema';
 
 const faker = require('faker');
-const geoip = require('geoip-lite');
 
 @Injectable()
 export class UserService implements OnModuleInit {
@@ -17,7 +16,7 @@ export class UserService implements OnModuleInit {
   onModuleInit() {
     console.log("User Module | Init")
 
-    this.insertData()
+    //this.insertData()
   }
 
   async insertData() {
@@ -45,10 +44,7 @@ export class UserService implements OnModuleInit {
     const createdUser = new this.userModel(dto);
     const numberOfUsers = await this.userModel.countDocuments()
 
-    const geo = geoip.lookup(ipAddress)
-    const countryIsoCode = geo == null ? "tr" : geo.country.toLowerCase()
-
-    createdUser.country = countryIsoCode
+    createdUser.country = faker.address.countryCode().toLowerCase()
     createdUser.rank = numberOfUsers + 1
 
     return createdUser.save();

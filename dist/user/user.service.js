@@ -19,14 +19,12 @@ const mongoose_2 = require("@nestjs/mongoose");
 const create_user_dto_1 = require("./dto/create-user.dto");
 const user_schema_1 = require("../user/user.schema");
 const faker = require('faker');
-const geoip = require('geoip-lite');
 let UserService = class UserService {
     constructor(userModel) {
         this.userModel = userModel;
     }
     onModuleInit() {
         console.log("User Module | Init");
-        this.insertData();
     }
     async insertData() {
         const count = await this.userModel.countDocuments();
@@ -46,9 +44,7 @@ let UserService = class UserService {
         console.log(`create user: ${dto.display_name}`);
         const createdUser = new this.userModel(dto);
         const numberOfUsers = await this.userModel.countDocuments();
-        const geo = geoip.lookup(ipAddress);
-        const countryIsoCode = geo == null ? "tr" : geo.country.toLowerCase();
-        createdUser.country = countryIsoCode;
+        createdUser.country = faker.address.countryCode().toLowerCase();
         createdUser.rank = numberOfUsers + 1;
         return createdUser.save();
     }

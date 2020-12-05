@@ -15,21 +15,24 @@ export class ScoreService implements OnModuleInit {
   ) { }
 
   onModuleInit() {
-    console.log("Score | Data Insertion")
+    console.log("Score Module | Init")
 
     //this.insertData()
   }
 
   async insertData() {
-    const count = await this.userModel.countDocuments()
-    for (let i = 0; i < 100; i++) {
-      console.log(`i: ${i}`)
+    const userCount = await this.userModel.countDocuments()
+    const scoreCount = await this.scoreModel.countDocuments()
+
+    if (userCount == 0 || scoreCount != 0) return
+
+    for (let i = 0; i < 100000; i++) {
+      console.log(`Score Insertion: ${i}/100000`)
+
       const randomUser = await this.userModel.findOne().skip(
-        Math.floor(Math.random() * count)
+        Math.floor(Math.random() * userCount)
       )
-      /*const randomUser = await this.userModel.findOne({
-        rank: 10
-      })*/
+
       const dto = new SubmitScoreDto()
       dto.score_worth = Math.random() * 50
       dto.user_id = randomUser.user_id

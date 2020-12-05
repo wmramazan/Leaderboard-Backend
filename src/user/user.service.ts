@@ -15,20 +15,26 @@ export class UserService implements OnModuleInit {
   ) { }
 
   onModuleInit() {
-    console.log("User | Data Insertion")
+    console.log("User Module | Init")
 
     this.insertData()
   }
 
   async insertData() {
-    for (let i = 0; i < 1000; i++) {
-      console.log(`${i}/1000`)
+    const count = await this.userModel.countDocuments()
+
+    if (count != 0) return
+
+    for (let i = 0; i < 10000; i++) {
+      console.log(`User Insertion: ${i}/10000`)
 
       const dto = new CreateUserDto()
       dto.display_name = faker.name.findName()
+
       const createdUser = new this.userModel(dto);
       createdUser.country = faker.address.countryCode().toLowerCase()
       createdUser.rank = i + 1
+
       await createdUser.save();
     }
   }

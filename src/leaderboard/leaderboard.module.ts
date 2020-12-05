@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { LeaderboardService } from './leaderboard.service';
 import { LeaderboardController } from './leaderboard.controller';
-import { User, UserSchema } from 'src/schema/user.schema';
+import { User, UserSchema } from '../user/user.schema';
 
 @Module({
   imports: [

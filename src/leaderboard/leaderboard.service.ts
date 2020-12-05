@@ -1,8 +1,8 @@
 import { FilterQuery, Model } from 'mongoose';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { User, UserDocument } from 'src/schema/user.schema';
-import { NUMBER_OF_USERS_IN_LEADERBOARD } from 'src/util/constants';
+import { User, UserDocument } from '../user/user.schema';
+import { NUMBER_OF_USERS_IN_LEADERBOARD } from '../util/constants';
 import { Leaderboard } from './interface/leaderboard.interface';
 
 @Injectable()

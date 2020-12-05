@@ -2,7 +2,7 @@ import { Model } from 'mongoose';
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { CreateUserDto } from './dto/create-user.dto';
-import { User, UserDocument } from 'src/schema/user.schema';
+import { User, UserDocument } from '../user/user.schema';
 
 const faker = require('faker');
 const geoip = require('geoip-lite');

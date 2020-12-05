@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { User } from "src/schema/user.schema";
+import { User } from "src/user/user.schema";
 
 export class Leaderboard {
   @ApiProperty()

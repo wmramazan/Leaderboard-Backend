@@ -1,9 +1,9 @@
 import { Model } from 'mongoose';
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Score, ScoreDocument } from 'src/schema/score.schema';
+import { Score, ScoreDocument } from './score.schema';
 import { SubmitScoreDto } from './dto/submit-score.dto';
-import { User, UserDocument } from 'src/schema/user.schema';
+import { User, UserDocument } from '../user/user.schema';
 
 @Injectable()
 export class ScoreService implements OnModuleInit {

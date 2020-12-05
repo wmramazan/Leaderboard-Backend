@@ -1,6 +1,6 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
-import { Score } from 'src/schema/score.schema';
+import { Score } from './score.schema';
 import { SubmitScoreDto } from './dto/submit-score.dto';
 import { ScoreService } from './score.service';
 

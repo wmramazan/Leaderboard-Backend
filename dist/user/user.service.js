@@ -33,7 +33,7 @@ let UserService = class UserService {
         if (count != 0)
             return;
         for (let i = 0; i < 100; i++) {
-            console.log(`User Insertion: ${i}/10000`);
+            console.log(`User Insertion: ${i}/100`);
             const dto = new create_user_dto_1.CreateUserDto();
             dto.display_name = faker.name.findName();
             const createdUser = new this.userModel(dto);

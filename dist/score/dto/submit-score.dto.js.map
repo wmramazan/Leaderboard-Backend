@@ -1,0 +1,1 @@
+{"version":3,"file":"submit-score.dto.js","sourceRoot":"","sources":["../../../src/score/dto/submit-score.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,6CAA6C;AAE7C,MAAa,cAAc;CAW1B;AANC;IAJC,qBAAW,CAAC;QACX,WAAW,EAAE,wBAAwB;QACrC,IAAI,EAAE,MAAM;KACb,CAAC;;mDACkB;AAKpB;IAHC,qBAAW,CAAC;QACX,WAAW,EAAE,wBAAwB;KACtC,CAAC;;+CACc;AAVlB,wCAWC"}

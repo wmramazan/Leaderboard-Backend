@@ -32,7 +32,7 @@ let UserService = class UserService {
         const count = await this.userModel.countDocuments();
         if (count != 0)
             return;
-        for (let i = 0; i < 10000; i++) {
+        for (let i = 0; i < 100; i++) {
             console.log(`User Insertion: ${i}/10000`);
             const dto = new create_user_dto_1.CreateUserDto();
             dto.display_name = faker.name.findName();

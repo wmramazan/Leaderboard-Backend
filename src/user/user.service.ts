@@ -25,8 +25,8 @@ export class UserService implements OnModuleInit {
 
     if (count != 0) return
 
-    for (let i = 0; i < 10000; i++) {
-      console.log(`User Insertion: ${i}/10000`)
+    for (let i = 0; i < 100; i++) {
+      console.log(`User Insertion: ${i}/100`)
 
       const dto = new CreateUserDto()
       dto.display_name = faker.name.findName()

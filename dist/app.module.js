@@ -20,7 +20,7 @@ let AppModule = class AppModule {
 AppModule = __decorate([
     common_1.Module({
         imports: [
-            mongoose_1.MongooseModule.forRoot(constants_1.DATABASE_CONNECTION_URL),
+            mongoose_1.MongooseModule.forRoot(process.env.MONGO_DB_URI || constants_1.DATABASE_CONNECTION_URI),
             user_module_1.UserModule,
             score_module_1.ScoreModule,
             leaderboard_module_1.LeaderboardModule

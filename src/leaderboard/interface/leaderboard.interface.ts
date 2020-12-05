@@ -1,6 +1,9 @@
+import { ApiProperty } from "@nestjs/swagger";
 import { User } from "src/schema/user.schema";
 
-export interface Leaderboard {
-  numberOfPlayers: number
-  players: User[]
+export class Leaderboard {
+  @ApiProperty()
+  numberOfPlayers: number;
+  @ApiProperty()
+  players: User[];
 }

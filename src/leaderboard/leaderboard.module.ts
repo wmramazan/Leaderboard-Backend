@@ -2,14 +2,14 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { LeaderboardService } from './leaderboard.service';
 import { LeaderboardController } from './leaderboard.controller';
-import { Score, ScoreSchema } from 'src/schema/score.schema';
+import { User, UserSchema } from 'src/schema/user.schema';
 
 @Module({
   imports: [
     MongooseModule.forFeature([
       {
-        name: Score.name,
-        schema: ScoreSchema,
+        name: User.name,
+        schema: UserSchema,
       },
     ]),
   ],

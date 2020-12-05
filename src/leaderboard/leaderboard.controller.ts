@@ -1,4 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
+import { User } from 'src/schema/user.schema';
 import { Leaderboard } from './interface/leaderboard.interface';
 import { LeaderboardService } from './leaderboard.service';
 
@@ -6,7 +7,7 @@ import { LeaderboardService } from './leaderboard.service';
 export class LeaderboardController {
   constructor(private readonly service: LeaderboardService) { }
 
-  @Get('profile/:userId')
+  @Get()
   getLeaderboard(): Promise<Leaderboard> {
     return this.service.get()
   }

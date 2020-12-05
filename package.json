@@ -26,6 +26,8 @@
     "@nestjs/mongoose": "7.0.2",
     "@nestjs/platform-express": "^7.0.0",
     "@nestjs/platform-fastify": "^7.5.5",
+    "faker": "^5.1.0",
+    "geoip-lite": "^1.4.2",
     "mongoose": "5.10.10",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",

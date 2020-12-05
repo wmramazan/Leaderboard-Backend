@@ -7,12 +7,15 @@ export type UserDocument = User & Document;
 @Schema()
 export class User {
   @Prop({
-    default: uuidv4()
+    default: uuidv4
   })
   user_id: string;
 
   @Prop({ required: true })
   display_name: string;
+
+  @Prop({ required: true })
+  country: string;
 
   @Prop({
     default: 0

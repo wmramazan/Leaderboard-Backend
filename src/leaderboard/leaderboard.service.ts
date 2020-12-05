@@ -1,21 +1,33 @@
-import { Model } from 'mongoose';
+import { FilterQuery, Model } from 'mongoose';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Score, ScoreDocument } from 'src/schema/score.schema';
+import { User, UserDocument } from 'src/schema/user.schema';
+import { NUMBER_OF_USERS_IN_LEADERBOARD } from 'src/util/constants';
 import { Leaderboard } from './interface/leaderboard.interface';
 
 @Injectable()
 export class LeaderboardService {
   constructor(
-    @InjectModel(Score.name)
-    private scoreModel: Model<ScoreDocument>,
+    @InjectModel(User.name)
+    private userModel: Model<UserDocument>,
   ) { }
 
   async get(): Promise<Leaderboard> {
-    return null
+    return this.getLeaderboard()
   }
 
   async getByIsoCode(isoCode: string): Promise<Leaderboard> {
-    return null
+    return this.getLeaderboard({
+      country: isoCode
+    })
+  }
+
+  private async getLeaderboard(conditions?: FilterQuery<User>) {
+    let numberOfUsers = await this.userModel.countDocuments(conditions)
+    let users = await this.userModel.find(conditions).sort('rank').limit(NUMBER_OF_USERS_IN_LEADERBOARD).exec()
+    return {
+      numberOfPlayers: numberOfUsers,
+      players: users
+    };
   }
 }

@@ -1,12 +1,17 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Score, ScoreSchema } from 'src/schema/score.schema';
+import { User, UserSchema } from 'src/schema/user.schema';
 import { ScoreController } from './score.controller';
 import { ScoreService } from './score.service';
 
 @Module({
   imports: [
     MongooseModule.forFeature([
+      {
+        name: User.name,
+        schema: UserSchema,
+      },
       {
         name: Score.name,
         schema: ScoreSchema,

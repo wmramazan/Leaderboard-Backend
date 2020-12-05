@@ -4760,14 +4760,14 @@
         "../node_modules/@nestjs/mongoose/dist/decorators/schema.decorator.d.ts"
       ],
       "../node_modules/@nestjs/mongoose/dist/decorators/prop.decorator.d.ts": [
-        "../node_modules/mongoose/index.d.ts"
+        "../node_modules/@types/mongoose/index.d.ts"
       ],
       "../node_modules/@nestjs/mongoose/dist/decorators/schema.decorator.d.ts": [
-        "../node_modules/mongoose/index.d.ts"
+        "../node_modules/@types/mongoose/index.d.ts"
       ],
       "../node_modules/@nestjs/mongoose/dist/factories/definitions.factory.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/mongoose/index.d.ts"
+        "../node_modules/@types/mongoose/index.d.ts"
       ],
       "../node_modules/@nestjs/mongoose/dist/factories/index.d.ts": [
         "../node_modules/@nestjs/mongoose/dist/factories/definitions.factory.d.ts",
@@ -4797,7 +4797,7 @@
       "../node_modules/@nestjs/mongoose/dist/interfaces/mongoose-options.interface.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/common/interfaces/index.d.ts",
-        "../node_modules/mongoose/index.d.ts"
+        "../node_modules/@types/mongoose/index.d.ts"
       ],
       "../node_modules/@nestjs/mongoose/dist/mongoose.module.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts",

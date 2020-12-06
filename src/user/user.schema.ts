@@ -9,7 +9,7 @@ export type UserDocument = User & Document;
 export class User {
   @ApiProperty()
   @Prop({
-    default: uuidv4
+    default: uuidv4,
   })
   user_id: string;
 
@@ -23,13 +23,13 @@ export class User {
 
   @ApiProperty()
   @Prop({
-    default: 0
+    default: 0,
   })
   points: number;
 
   @ApiProperty()
   @Prop({
-    default: 0
+    default: 0,
   })
   rank: number;
 }

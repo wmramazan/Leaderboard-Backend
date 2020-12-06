@@ -12,9 +12,9 @@ import { DATABASE_CONNECTION_URI } from './util/constants';
     MongooseModule.forRoot(process.env.MONGO_DB_URI || DATABASE_CONNECTION_URI),
     UserModule,
     ScoreModule,
-    LeaderboardModule
+    LeaderboardModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}

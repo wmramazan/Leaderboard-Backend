@@ -7,17 +7,14 @@ import { ScoreService } from './score.service';
 @ApiTags('score')
 @Controller('score')
 export class ScoreController {
-  constructor(private readonly service: ScoreService) { }
+  constructor(private readonly service: ScoreService) {}
 
   @Post('submit')
   @ApiCreatedResponse({
     description: 'The score has been submitted',
-    type: Score
+    type: Score,
   })
-  submitScore(
-    @Body() dto: SubmitScoreDto,
-  ): Promise<Score> {
-    return this.service.submit(dto)
+  submitScore(@Body() dto: SubmitScoreDto): Promise<Score> {
+    return this.service.submit(dto);
   }
-
 }

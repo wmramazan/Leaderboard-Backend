@@ -10,24 +10,28 @@ export class LeaderboardService {
   constructor(
     @InjectModel(User.name)
     private userModel: Model<UserDocument>,
-  ) { }
+  ) {}
 
   async get(): Promise<Leaderboard> {
-    return this.getLeaderboard()
+    return this.getLeaderboard();
   }
 
   async getByIsoCode(isoCode: string): Promise<Leaderboard> {
     return this.getLeaderboard({
-      country: isoCode
-    })
+      country: isoCode,
+    });
   }
 
   private async getLeaderboard(conditions?: FilterQuery<User>) {
-    let numberOfUsers = await this.userModel.countDocuments(conditions)
-    let users = await this.userModel.find(conditions).sort('rank').limit(NUMBER_OF_USERS_IN_LEADERBOARD).exec()
+    let numberOfUsers = await this.userModel.countDocuments(conditions);
+    let users = await this.userModel
+      .find(conditions)
+      .sort('rank')
+      .limit(NUMBER_OF_USERS_IN_LEADERBOARD)
+      .exec();
     return {
       numberOfPlayers: numberOfUsers,
-      players: users
+      players: users,
     };
   }
 }

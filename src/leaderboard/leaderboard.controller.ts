@@ -6,26 +6,25 @@ import { LeaderboardService } from './leaderboard.service';
 @ApiTags('leaderboard')
 @Controller('leaderboard')
 export class LeaderboardController {
-  constructor(private readonly service: LeaderboardService) { }
+  constructor(private readonly service: LeaderboardService) {}
 
   @Get()
   @ApiCreatedResponse({
     description: 'The leaderboard has been listed.',
-    type: Leaderboard
+    type: Leaderboard,
   })
   getLeaderboard(): Promise<Leaderboard> {
-    return this.service.get()
+    return this.service.get();
   }
 
   @Get(':countryIsoCode')
   @ApiCreatedResponse({
     description: 'The leaderboard has been listed by country.',
-    type: Leaderboard
+    type: Leaderboard,
   })
   getLeaderboardByCountryIsoCode(
     @Param('countryIsoCode') isoCode,
   ): Promise<Leaderboard> {
-    return this.service.getByIsoCode(isoCode)
+    return this.service.getByIsoCode(isoCode);
   }
-
 }

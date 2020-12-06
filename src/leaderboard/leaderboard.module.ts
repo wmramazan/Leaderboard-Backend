@@ -16,4 +16,4 @@ import { User, UserSchema } from '../user/user.schema';
   controllers: [LeaderboardController],
   providers: [LeaderboardService],
 })
-export class LeaderboardModule { }
+export class LeaderboardModule {}

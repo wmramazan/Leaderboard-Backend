@@ -16,7 +16,7 @@ export class Score {
 
   @ApiProperty()
   @Prop({
-    default: Date.now()
+    default: Date.now(),
   })
   timestamp: number;
 }

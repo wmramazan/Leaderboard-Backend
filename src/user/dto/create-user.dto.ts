@@ -1,3 +1,3 @@
 export class CreateUserDto {
-  display_name: string
+  display_name: string;
 }

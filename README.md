@@ -42,3 +42,11 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+## Demo
+
+[Postman Collection](https://github.com/wmramazan/Leaderboard-Backend/blob/main/leaderboard-backend.postman_collection.json)
+
+[Application](https://leaderboard-backend-3425.herokuapp.com)
+
+[Swagger Documentation](https://leaderboard-backend-3425.herokuapp.com/api)

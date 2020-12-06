@@ -23,7 +23,7 @@ AppModule = __decorate([
             mongoose_1.MongooseModule.forRoot(process.env.MONGO_DB_URI || constants_1.DATABASE_CONNECTION_URI),
             user_module_1.UserModule,
             score_module_1.ScoreModule,
-            leaderboard_module_1.LeaderboardModule
+            leaderboard_module_1.LeaderboardModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

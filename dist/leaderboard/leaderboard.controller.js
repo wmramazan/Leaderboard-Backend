@@ -32,7 +32,7 @@ __decorate([
     common_1.Get(),
     swagger_1.ApiCreatedResponse({
         description: 'The leaderboard has been listed.',
-        type: leaderboard_interface_1.Leaderboard
+        type: leaderboard_interface_1.Leaderboard,
     }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
@@ -42,7 +42,7 @@ __decorate([
     common_1.Get(':countryIsoCode'),
     swagger_1.ApiCreatedResponse({
         description: 'The leaderboard has been listed by country.',
-        type: leaderboard_interface_1.Leaderboard
+        type: leaderboard_interface_1.Leaderboard,
     }),
     __param(0, common_1.Param('countryIsoCode')),
     __metadata("design:type", Function),

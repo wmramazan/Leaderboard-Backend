@@ -33,7 +33,7 @@ __decorate([
     common_1.Get('profile/:userId'),
     swagger_1.ApiCreatedResponse({
         description: 'The profile has been retrieved.',
-        type: user_schema_1.User
+        type: user_schema_1.User,
     }),
     __param(0, common_1.Param('userId')),
     __metadata("design:type", Function),
@@ -44,10 +44,9 @@ __decorate([
     common_1.Post('create'),
     swagger_1.ApiCreatedResponse({
         description: 'The user has been created.',
-        type: user_schema_1.User
+        type: user_schema_1.User,
     }),
-    __param(0, common_1.Request()),
-    __param(1, common_1.Body()),
+    __param(0, common_1.Request()), __param(1, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, create_user_dto_1.CreateUserDto]),
     __metadata("design:returntype", Promise)

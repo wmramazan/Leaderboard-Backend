@@ -25,7 +25,7 @@ let ScoreService = class ScoreService {
         this.scoreModel = scoreModel;
     }
     onModuleInit() {
-        console.log("Score Module | Init");
+        console.log('Score Module | Init');
     }
     async insertData() {
         const userCount = await this.userModel.countDocuments();
@@ -34,7 +34,9 @@ let ScoreService = class ScoreService {
             return;
         for (let i = 0; i < 100000; i++) {
             console.log(`Score Insertion: ${i}/100000`);
-            const randomUser = await this.userModel.findOne().skip(Math.floor(Math.random() * userCount));
+            const randomUser = await this.userModel
+                .findOne()
+                .skip(Math.floor(Math.random() * userCount));
             const dto = new submit_score_dto_1.SubmitScoreDto();
             dto.score_worth = Math.random() * 50;
             dto.user_id = randomUser.user_id;
@@ -45,18 +47,20 @@ let ScoreService = class ScoreService {
         console.log(`Submit score: ${dto.score_worth}`);
         const createdScore = new this.scoreModel(dto);
         const user = await this.userModel.findOne({
-            user_id: dto.user_id
+            user_id: dto.user_id,
         });
         console.log(`user: ${user}`);
         const newPoints = user.points + createdScore.score_worth;
         console.log(`newPoints: ${newPoints}`);
-        const firstAffectedUser = await this.userModel.findOne({
-            points: { $lt: newPoints }
-        }).sort('rank');
+        const firstAffectedUser = await this.userModel
+            .findOne({
+            points: { $lt: newPoints },
+        })
+            .sort('rank');
         console.log(`firstAffectedUser: ${firstAffectedUser}`);
         if (firstAffectedUser != null && firstAffectedUser.id != user.id) {
             const affectedUsers = await this.userModel.find({
-                rank: { $lt: user.rank, $gte: firstAffectedUser.rank }
+                rank: { $lt: user.rank, $gte: firstAffectedUser.rank },
             });
             console.log(`Number of affected users: ${affectedUsers.length}`);
             affectedUsers.forEach(async (affectedUser) => {

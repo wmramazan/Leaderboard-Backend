@@ -16,13 +16,13 @@ class SubmitScoreDto {
 __decorate([
     swagger_1.ApiProperty({
         description: 'The value of new score',
-        type: Number
+        type: Number,
     }),
     __metadata("design:type", Number)
 ], SubmitScoreDto.prototype, "score_worth", void 0);
 __decorate([
     swagger_1.ApiProperty({
-        description: 'The identifier of user'
+        description: 'The identifier of user',
     }),
     __metadata("design:type", String)
 ], SubmitScoreDto.prototype, "user_id", void 0);

@@ -30,7 +30,7 @@ __decorate([
     common_1.Post('submit'),
     swagger_1.ApiCreatedResponse({
         description: 'The score has been submitted',
-        type: score_schema_1.Score
+        type: score_schema_1.Score,
     }),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),

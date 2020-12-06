@@ -27,15 +27,19 @@ let LeaderboardService = class LeaderboardService {
     }
     async getByIsoCode(isoCode) {
         return this.getLeaderboard({
-            country: isoCode
+            country: isoCode,
         });
     }
     async getLeaderboard(conditions) {
         let numberOfUsers = await this.userModel.countDocuments(conditions);
-        let users = await this.userModel.find(conditions).sort('rank').limit(constants_1.NUMBER_OF_USERS_IN_LEADERBOARD).exec();
+        let users = await this.userModel
+            .find(conditions)
+            .sort('rank')
+            .limit(constants_1.NUMBER_OF_USERS_IN_LEADERBOARD)
+            .exec();
         return {
             numberOfPlayers: numberOfUsers,
-            players: users
+            players: users,
         };
     }
 };

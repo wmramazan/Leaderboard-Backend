@@ -24,7 +24,7 @@ let UserService = class UserService {
         this.userModel = userModel;
     }
     onModuleInit() {
-        console.log("User Module | Init");
+        console.log('User Module | Init');
     }
     async insertData() {
         const count = await this.userModel.countDocuments();

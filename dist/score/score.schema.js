@@ -27,7 +27,7 @@ __decorate([
 __decorate([
     swagger_1.ApiProperty(),
     mongoose_1.Prop({
-        default: Date.now()
+        default: Date.now(),
     }),
     __metadata("design:type", Number)
 ], Score.prototype, "timestamp", void 0);

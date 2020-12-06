@@ -18,7 +18,7 @@ let User = class User {
 __decorate([
     swagger_1.ApiProperty(),
     mongoose_1.Prop({
-        default: uuid_1.v4
+        default: uuid_1.v4,
     }),
     __metadata("design:type", String)
 ], User.prototype, "user_id", void 0);
@@ -35,14 +35,14 @@ __decorate([
 __decorate([
     swagger_1.ApiProperty(),
     mongoose_1.Prop({
-        default: 0
+        default: 0,
     }),
     __metadata("design:type", Number)
 ], User.prototype, "points", void 0);
 __decorate([
     swagger_1.ApiProperty(),
     mongoose_1.Prop({
-        default: 0
+        default: 0,
     }),
     __metadata("design:type", Number)
 ], User.prototype, "rank", void 0);

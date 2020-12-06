@@ -158,7 +158,7 @@
 		{
 			"id": "3a79d697-08e4-4532-8785-45730adb6dd4",
 			"key": "DOMAIN",
-			"value": "http://localhost:3000"
+			"value": "https://leaderboard-backend-3425.herokuapp.com"
 		}
 	],
 	"protocolProfileBehavior": {}

@@ -14,16 +14,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/user/profile/361068f9-9db4-456e-89b2-1a01f29f4f77",
-							"protocol": "http",
+							"raw": "{{DOMAIN}}/user/profile/2f582587-f822-4545-9847-72f82efce075",
 							"host": [
-								"localhost"
+								"{{DOMAIN}}"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"profile",
-								"361068f9-9db4-456e-89b2-1a01f29f4f77"
+								"2f582587-f822-4545-9847-72f82efce075"
 							]
 						}
 					},
@@ -44,12 +42,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/create",
-							"protocol": "http",
+							"raw": "{{DOMAIN}}/user/create",
 							"host": [
-								"localhost"
+								"{{DOMAIN}}"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"create"
@@ -71,7 +67,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"score_worth\": 50.25,\n    \"user_id\": \"361068f9-9db4-456e-89b2-1a01f29f4f77\"\n}",
+							"raw": "{\n    \"score_worth\": 50.25,\n    \"user_id\": \"2f582587-f822-4545-9847-72f82efce075\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -79,12 +75,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/score/submit",
-							"protocol": "http",
+							"raw": "{{DOMAIN}}/score/submit",
 							"host": [
-								"localhost"
+								"{{DOMAIN}}"
 							],
-							"port": "3000",
 							"path": [
 								"score",
 								"submit"
@@ -105,12 +99,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/leaderboard",
-							"protocol": "http",
+							"raw": "{{DOMAIN}}/leaderboard",
 							"host": [
-								"localhost"
+								"{{DOMAIN}}"
 							],
-							"port": "3000",
 							"path": [
 								"leaderboard"
 							]
@@ -124,12 +116,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/leaderboard/tr",
-							"protocol": "http",
+							"raw": "{{DOMAIN}}/leaderboard/tr",
 							"host": [
-								"localhost"
+								"{{DOMAIN}}"
 							],
-							"port": "3000",
 							"path": [
 								"leaderboard",
 								"tr"
@@ -162,6 +152,13 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"id": "3a79d697-08e4-4532-8785-45730adb6dd4",
+			"key": "DOMAIN",
+			"value": "http://localhost:3000"
 		}
 	],
 	"protocolProfileBehavior": {}
